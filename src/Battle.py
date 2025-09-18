@@ -19,7 +19,9 @@ def startBattle(teamPlayer:List[Monster], teamEnemy:List[Monster]):
         #Changes active player being displayed
         #The battling will likely take place here
         if(turnFlipper):
-
+            
+            #Section that displays the stats on an active team member
+            getActiveCreatureDisplay(teamPlayer[0], 1, len(teamPlayer))
             #Section that displays the moves on an active team member
             getLine(MOVES)
             getAttackDisplay(teamPlayer[0].attacks)
@@ -41,6 +43,14 @@ def getTeamDisplay(teamStatus:List[Monster], isPlayer:bool = True):
         teamCount = teamCount+1
         print("\t"+str(teamCount) + "/" + str(len(teamStatus)), end="\t")
         x.getStatus()
+
+#Handles displaying the current status and offensive stats for an active creature on team
+def getActiveCreatureDisplay(activeCreature:Monster, teamNum:int, teamTotoal:int):
+
+    print("Active Creature")
+    print(str(teamNum) + "/" + str(teamTotoal), end="\t")
+    activeCreature.getStatus()
+    activeCreature.getOffensiveStats()
 
 #Handles displaying attack information
 def getAttackDisplay(moveList:List[Attack]):

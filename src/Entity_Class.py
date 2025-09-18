@@ -112,7 +112,7 @@ class Monster(Entity):
     def __init__(self, entityName:str, entityStats:list[int], entityRace:str, entityElement:list[Element]):
         super().__init__(entityName, entityStats, entityRace, entityElement)
 
-    def getStatus(self, isDetailed:bool = False):
+    def getStatus(self):
 
         #Converts hp to 3 digits
         hpDisplay = self.tripleDigitConverter(self.health)
@@ -133,3 +133,25 @@ class Monster(Entity):
         self.elementConsoleHandler()
         #Displays the name
         print("\t"+self.name)
+
+    def getOffensiveStats(self):
+        
+        #Starts the menu off with an indent
+        print(end="\t")
+
+        #fetches Strength stat
+        print(STR_COL + "STR" + RESET, end=": ")
+        print(self.strength, end = " ")
+
+        #fetches Dexterity stat
+        print(DEX_COL + "DEX" + RESET, end=": ")
+        print(self.dexterity, end=" ")
+
+        #fetches Intelligence stat
+        print(INT_COL + "INT" + RESET, end=": ")
+        print(self.intelligence, end=" ")
+
+        #fetches Spirit stat
+        print(SPI_COL + "SPI" + RESET, end=": ")
+        #End sequence different here to make a new line for the next part of the menu
+        print(self.spirit)
