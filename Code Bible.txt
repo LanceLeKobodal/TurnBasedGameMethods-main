@@ -1,0 +1,12 @@
+Table of Contents
+
+1.1 Entity Class
+
+
+
+
+
+
+		1.1 Entity Class
+	This class will store any creature that is placed on the field and will be used to parent both the Character class as well as any other types
+	of classes 

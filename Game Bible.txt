@@ -1,0 +1,41 @@
+Table of Contents
+
+1.1 Stats and abilities
+
+
+
+
+		1.1 Stats and abilities
+	Strength
+
+Will be used to calculate carryweight capacity as well as one of the options for martial attacks by calculating damage based on the strength stat
+
+To differentiate strength from dexterity also use it as a way to calculate damage resistances against non-magical attacks as well as be mainly melee attacks with very few
+exceptions
+
+Those exeptions being specific
+
+	Dexterity
+
+Will be used to calculate speed in the turn order as well as the other option for martial attacks for both weaker melee and ranged attacks
+
+
+	Vigor
+
+
+	Endurnace
+
+
+	Intelligence
+
+Intelligence will be used to calculate damage values based on elemental spells and magic attacks. Forming a connection to what is known to the world around the spell caster.
+It is important to note that this will differ from Faith which makes it's connection to magic from other deities and spirits by connecting power from forming bonds 
+with the meta-physical.
+
+	Mind
+
+
+	Faith
+
+
+   

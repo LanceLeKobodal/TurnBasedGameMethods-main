@@ -1,0 +1,34 @@
+Look at turn based game for inspiration while rewriting code
+
+Premis:
+The player character is dropped into an isekai world. They can choose a weapon that they vessel and are locked out of using other weapons like rising of the shield hero.
+Can team up with other vessel weapon holders but are locked out of exp gain. Will be forced to team up when a wave comes summoning a storm of monsters invading the world.
+The game ends when the waves are over or when all the vessel weapon holders are dead. Will be a high fantasy enviornment. Only when the waves are over can a hero finally drop
+their weapons and possibly take the vessel weapons from the other heros
+
+Post game content:
+After successfully fighting off the waves and completing story mode the player can invade other worlds collecting forigen rescources and possibly conquer worlds by taking 
+their vessel weapons
+
+
+Todo
+
+Decide on what weapon vessels will be avaliable and what thier playstyles are
+-Shield will be tank/buffs/healer all close range
+-Sword will be high damage close range
+-Spear will be moderate damage with armor piercing and medium range
+-Bow will be moderate damage with long distance fighting
+-Staff will be strong healer/strong buffs all long range, can die easily
+-Tome will be strong magic damage and utility, limited by sp(sp standing for spirit points) usage
+-Lance will be calvary combat, summon an evolving steed to traverse the battle field quickly
+-Greatsword Heavy hitter use enchantments increase damage heavlily with elemental damage with some resistance using the blade as a shield to parry with
+small increase to critical hit chance
+
+
+Build up skill trees for classes, races, and weapon vessels
+-classes and races will be built up by exp
+-weapon vessels will have quests tied to them to try and lead back to the main story
+
+Make fire emblem style fighting system
+
+Precraft a story mode to get a hang on how world building works and figure how to generate it stably for world invasions
