@@ -10,26 +10,21 @@ def startBattle(teamPlayer:List[Monster], teamEnemy:List[Monster]):
     allTeamColors = [playerColor, enemyColor]
 
     while len(allTeams) > 1:
-
+        #This cleans up the menu screen and clears it
+        clearConsole()
+        teamCount = 0
         #This is where the field display is calculated
-        getBattleField(allTeams, allTeamColors)
-
-        
-
-        #Changes active player being displayed
-        #The battling will likely take place here
-        if(turnFlipper):
+        while(turnFlipper):
+            teamCount = 0
+            for _ in teamPlayer:
             
-            #Section that displays the stats on an active team member
-            getActiveCreatureDisplay(teamPlayer[0], 1, len(teamPlayer))
-            #Section that displays the moves on an active team member
-            getLine(MOVES)
-            getAttackDisplay(teamPlayer[0].attacks)
-            getLine(MOVES)
-            turnFlipper = False
-        else:
-            turnFlipper = True
-        input("")
+                clearConsole()
+                getBattleField(allTeams, allTeamColors)
+                getPlayerDisplay(teamPlayer,teamCount)
+                input("")
+                teamCount = teamCount + 1
+                
+
 
 #Handles displaying team information
 def getTeamDisplay(teamStatus:List[Monster], isPlayer:bool = True):
@@ -68,7 +63,7 @@ def getAttackDisplay(moveList:List[Attack]):
             if(len(moves.elementType)== elementCount):
                print(element.color + element.name, end=RESET+".\n")
             elif(elementCount < len(moves.elementType)):
-                print(element.color + element.name, end=RESET + "/")
+                print(element.color + element.name, end=RESET+"/")
                 elementCount = elementCount + 1
     
 def getBattleField(teams:List[List[Monster]], teamColors:List[str]):
@@ -87,3 +82,12 @@ def getBattleField(teams:List[List[Monster]], teamColors:List[str]):
 #Makes a consistent line
 def getLine(color:str = ""):
     print(color+"________________________________________________________________________________________"+RESET)
+
+
+def getPlayerDisplay(playerTeam:list[Monster], activeMember:int):
+    #Section that displays the stats on an active team member
+    getActiveCreatureDisplay(playerTeam[activeMember], (activeMember+1), len(playerTeam))
+    #Section that displays the moves on an active team member
+    getLine(MOVES)
+    getAttackDisplay(playerTeam[activeMember].attacks)
+    getLine(MOVES)

@@ -10,6 +10,7 @@ greatswordChar = Entity("Guts", [15,8,12,13,10,8,12], "Human", [getNeut()])
 vesselGreatsword = Weapon("Vessel Greatsword", 100, 100)
 
 #Equips the Vessel Greatsword to the Greatsword Hero
+
 greatswordChar.equipMainHand(vesselGreatsword)
 
 #This will be the base greatsword character when not in use by a player

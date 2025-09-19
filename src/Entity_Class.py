@@ -90,6 +90,9 @@ class Entity:
         except:
             print(str(self.elementType[0].color) + str(self.elementType[0].name)+RESET, end="\t")
 
+        #Adds an extra tab after the elements displayed for a creature if they only have one element to align the names
+        if len(self.elementType) == 1:
+            print(end="\t")
     #Returns a string of a number converted to 3 digets
     def tripleDigitConverter(self, number:int):
         convertedNumber = str(number)

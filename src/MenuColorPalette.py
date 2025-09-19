@@ -1,7 +1,7 @@
 from colorama import just_fix_windows_console
 import os
+import sys
 
-clear = lambda: os.system('cls')
 just_fix_windows_console()
 
 ESC_COLOR = "\x1b"
@@ -110,27 +110,15 @@ SPI_COL = TEXT + "11m"
 
 
 
-#Example Menu
 
-print(ENEMY + "________________________________________________________________________________________" + RESET)
-print("Enemy Team\t1/4 ("+HP_BACK+"HP"+RESET+":"+HP_TEXT+"111"+RESET+"/"+HP_TEXT+"111"+RESET+ " "+MP_BACK+"MP"+RESET+":"+MP_TEXT+"111"+RESET+"/"+MP_TEXT+"111"+RESET+") \t"+EARTH +"Earth"+RESET+"/"+ LIGHTNING+"Lightning"+RESET+" \tMarnmer")
-print("\t\t2/4 ("+HP_BACK+"HP"+RESET+":"+HP_TEXT+"012"+RESET+"/"+HP_TEXT+"012"+RESET+ " "+MP_BACK+"MP"+RESET+":"+MP_TEXT+"000"+RESET+"/"+MP_TEXT+"000"+RESET+") \t"+FIRE+"Fire"+RESET+" \t\t\tGrundle Stumper")
-print("\t\t3/4 ("+HP_BACK+"HP"+RESET+":"+HP_TEXT+"046"+RESET+"/"+HP_TEXT+"046"+RESET+ " "+MP_BACK+"MP"+RESET+":"+MP_TEXT+"346"+RESET+"/"+MP_TEXT+"346"+RESET+") \t"+CHICKEN+"CHICKEN"+RESET+" \t\tXquic The All Mighty")
-print("\t\t4/4 ("+HP_BACK+"HP"+RESET+":"+HP_TEXT+"024"+RESET+"/"+HP_TEXT+"024"+RESET+ " "+MP_BACK+"MP"+RESET+":"+MP_TEXT+"052"+RESET+"/"+MP_TEXT+"052"+RESET+") \t"+NEUTRAL+"Neutral"+RESET+" \t\tEvil Centaur")
-print(ENEMY + "________________________________________________________________________________________" + RESET)
+if sys.platform in ('linux', 'darwin'):
+    consoleWipe = 'clear'
+elif sys.platform == 'win32':
+    consoleWipe = 'cls'
+else:
+    print('Platfrom not supported', file=sys.stderr)
+    exit(1)
 
-print(TEAM + "________________________________________________________________________________________" + RESET)
-print("Player Team \t1/4 ("+HP_BACK+"HP"+RESET+":"+HP_TEXT+"111"+RESET+"/"+HP_TEXT+"111"+RESET+ " "+MP_BACK+"MP"+RESET+":"+MP_TEXT+"111"+RESET+"/"+MP_TEXT+"111"+RESET+") \t"+EARTH +"Earth"+RESET+"/"+ LIGHTNING+"Lightning"+RESET+" \tMarnmer")
-print("\t\t2/4 ("+HP_BACK+"HP"+RESET+":"+HP_TEXT+"012"+RESET+"/"+HP_TEXT+"012"+RESET+ " "+MP_BACK+"MP"+RESET+":"+MP_TEXT+"000"+RESET+"/"+MP_TEXT+"000"+RESET+") \t"+FIRE+"Fire"+RESET+" \t\t\tGrundle Stumper")
-print("\t\t3/4 ("+HP_BACK+"HP"+RESET+":"+HP_TEXT+"046"+RESET+"/"+HP_TEXT+"046"+RESET+ " "+MP_BACK+"MP"+RESET+":"+MP_TEXT+"346"+RESET+"/"+MP_TEXT+"346"+RESET+") \t"+CHICKEN+"CHICKEN"+RESET+" \t\tXquic The All Mighty")
-print("\t\t4/4 ("+HP_BACK+"HP"+RESET+":"+HP_TEXT+"024"+RESET+"/"+HP_TEXT+"024"+RESET+ " "+MP_BACK+"MP"+RESET+":"+MP_TEXT+"052"+RESET+"/"+MP_TEXT+"052"+RESET+") \t"+NEUTRAL+"Neutral"+RESET+" \t\tEvil Centaur")
-print(TEAM + "________________________________________________________________________________________" + RESET)
-print("ACTIVE:\t1/4 ("+HP_BACK+"HP"+RESET+":"+HP_TEXT+"111"+RESET+"/"+HP_TEXT+"111"+RESET+ " "+MP_BACK+"MP"+RESET+":"+MP_TEXT+"111"+RESET+"/"+MP_TEXT+"111"+RESET+") \t"+EARTH +"Earth"+RESET+"/"+ LIGHTNING+"Lightning"+RESET+" \tMarnmer")
-print(STR_COL+"STR"+RESET+": 4 "+DEX_COL+"DEX"+RESET+": 20 "+INT_COL+"INT"+RESET+": 9 "+SPI_COL+"SPI"+RESET+": 2")
 
-print(MOVES + "________________________________________________________________________________________" + RESET)
-print("1. "+LIGHTNING+"Tazer Tooth" + RESET+"\t\tPOW:"+"1-5+"+INT_COL+"(INT)"+RESET+NEUTRAL+"\tPiercing"+RESET+"/"+LIGHTNING+"Lightning"+RESET)
-print("2. "+LIGHTNING+"Lightning Storm" + RESET+"\tPOW:"+"10*"+INT_COL+"(INT)"+RESET+NEUTRAL+"\tPiercing"+RESET+"/"+LIGHTNING+"Lightning"+RESET)
-print(MOVES + "________________________________________________________________________________________" + RESET)
-
-input("")
+def clearConsole() -> None:
+    os.system(consoleWipe)
