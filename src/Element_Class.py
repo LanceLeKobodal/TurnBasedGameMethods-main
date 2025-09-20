@@ -22,6 +22,9 @@ ice = "Ice"
 elec = "Lightning"
 plant = "Plant"
 
+arcane = "Arcane"
+psi = "Psionic"
+
 
 #Spiritual elements
 spirit = "Spirit"
@@ -53,14 +56,14 @@ class Element:
             self.immunity = ElImmune
             self.color = ElColor
 
-        #Will return an integer or float based on an element used
+        #Will return a float based on an element used to multiply the damage taken
         def isWeak(self, enemyElement:str):
                 #returnFate will be an int to be sent back to multiply damage
                 returnFate:float = 0
 
                 #Damage is increased if weak
                 if (enemyElement in self.weakness):
-                        returnFate = 2
+                        returnFate = 1.5
                 #Damage is reduced if resisted
                 elif(enemyElement in self.resistance):
                         returnFate = 0.5
@@ -226,7 +229,7 @@ def getPlant():
         plantName = "Plant"
         plantSummary = "A gift from the ground and waters below. The element of Life, Growth, and Connection"
         plantWeak:list[str] = [fire, wind, slash, mSlash, ice]
-        plantResist:list[str] = ["Water", "Plant", "Lightning"]
+        plantResist:list[str] = [water, plant, elec]
         plantImmune:list[str] = []
         plantColor = BACK + "2m" + BLACK_TEXT
                                      
@@ -239,7 +242,7 @@ def getElec():
         lightningName = elec
         lightningSummary = "A gift of the skies and flames above. The element of Energy, Connection, and Electricity"
         lightningWeak:list[str] = [earth]
-        lightningResist:list[str] = [plant]
+        lightningResist:list[str] = []
         lightningImmune:list[str] = []
         lightningColor = BACK + "3m" + BLACK_TEXT
                                      
@@ -250,7 +253,7 @@ def getElec():
 def getSpirit():
         spiritName = spirit
         spiritSummary = "An eventual result of Life leaving the body behind. The element of Connection, Rememberance, and Life Eternal"
-        spiritWeak:list[str] = [spirit]
+        spiritWeak:list[str] = [spirit, psi]
         spiritResist:list[str] = [life, death]
         spiritImmune:list[str] = [slash, pierce, bludge]
                                      
@@ -263,7 +266,7 @@ def getLife():
         lifeSummary = "The true source of all living energy. The element of Connection, Healing, Purity"
         lifeWeak:list[str] = [death, fire]
         lifeResist:list[str] = [life, water, plant]
-        lifeImmune:list[str] = [slash, pierce, bludge]
+        lifeImmune:list[str] = []
         lifeColor = BACK + "11m" + BLACK_TEXT
                                      
         returnLife = Element(lifeName, lifeSummary, lifeWeak, lifeResist, lifeImmune, lifeColor)
@@ -273,9 +276,9 @@ def getLife():
 def getDeath():
         deathName = death
         deathSummary = "The result of the life given to a spirit given physical form hanging by a thread. The element of rebith, reconnection, and necromancy"
-        deathWeak:list[str] = [life, fire, plant]
+        deathWeak:list[str] = [life, fire, plant, mBludge]
         deathResist:list[str] = [spirit, death]
-        deathImmune:list[str] = [slash, pierce, bludge]
+        deathImmune:list[str] = [slash, pierce]
 
         returnDeath = Element(deathName, deathSummary, deathWeak, deathResist, deathImmune)
 
@@ -291,6 +294,28 @@ def getIce():
         returnIce = Element(iceName, iceSummary, iceWeak, iceResist, iceImmune)
 
         return returnIce
+
+def getArcane():
+        arcName = arcane
+        arcSummary = "The element of magic without dicipline or form"
+        arcWeak:list[str] = []
+        arcResist:list[str] = []
+        arcImmune:list[str] = []
+
+        returnArc = Element(arcName, arcSummary, arcWeak, arcResist, arcImmune)
+
+        return returnArc
+
+def getPsi():
+        psiName = psi
+        psiSummary = "The element of the mind and the result of the mind extending out and mingling with others psionically."
+        psiWeak:list[str] = []
+        psiResist:list[str] = [psi]
+        psiImmune:list[str] = []
+
+        returnPsi = Element(psiName, psiSummary, psiWeak, psiResist, psiImmune)
+        
+        return returnPsi
 
 #Complex mode creature Elements go here
 def getRiver():

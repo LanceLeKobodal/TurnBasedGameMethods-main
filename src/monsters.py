@@ -23,10 +23,20 @@ team2 = [mossPuppy, xquic, magmaSlug, marnmer]
 
 sadie.addAttack(vineWhip)
 sadie.addAttack(waterBolt)
+sadie.addAttack(milkDrink)
 
 xquic.addAttack(slashAttack)
 
 susie.addAttack(waterBolt)
 susie.addAttack(slashAttack)
+susie.addAttack(ram)
+
+kittenKatten.addAttack(waterBolt)
+kittenKatten.addAttack(elecBolt)
+kittenKatten.addAttack(slashAttack)
+
+babyDraken.addAttack(fireBolt)
+babyDraken.addAttack(slashAttack)
+babyDraken.addAttack(ram)
 
 

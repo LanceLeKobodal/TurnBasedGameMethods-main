@@ -32,3 +32,9 @@ Build up skill trees for classes, races, and weapon vessels
 Make fire emblem style fighting system
 
 Precraft a story mode to get a hang on how world building works and figure how to generate it stably for world invasions
+
+Mushroom fairy boss fight
+Drinking her tea will give you a harder boss fight where you are transfered to the fey realm to fight her true from
+Can only die in the fey realm too
+if fought in normal world the fairy will escape to the fey world on death
+Fey world form will be called mushy form
